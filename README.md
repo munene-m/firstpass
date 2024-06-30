@@ -14,7 +14,9 @@ go build .
 
 Run the CLI using:
 
-`go run main.go [flags]`
+```
+go run main.go [flags]
+```
 
 ### Flags
 
@@ -22,13 +24,16 @@ Run the CLI using:
 - `-c --count int`: Number of passwords to generate
 - `-L --lowercase bool`: Include lowercase characters
 - `-U --uppercase bool`: Include uppercase characters
-- `-n -- numbers bool`: Include numeric values
-- `-cp -- copy bool`: Copy to clipboard
+- `-n --numbers bool`: Include numeric values
+- `-cp --copy bool`: Copy to clipboard
 - `-s --special bool`: Include special characters
 
 ### Example
 
-`go run main.go -l 16 -U -L -n -s -c 3`
+```
+go run main.go -l 16 -U -L -n -s -c 3
+```
+
 This command generates 3 passwords, each 16 characters long, including uppercase, lowercase, numbers, and special characters.
 
 ### Features
