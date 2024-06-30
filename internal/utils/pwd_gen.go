@@ -2,7 +2,6 @@ package utils
 
 import (
 	"crypto/rand"
-	"fmt"
 	"math/big"
 	"strings"
 
@@ -16,7 +15,7 @@ const (
 	specialChars = "!@#$%^&*()-_=+[]{}|;:,.<>?"
 )
 
-func GeneratePassword(length int, useUpper, useLower, useSpecial, useNumbers, copy bool) string {
+func GeneratePassword(length int, useUpper, useLower, useSpecial, useNumbers bool) string {
 	var chars string
 	if useLower {
 		chars += lowerChars
@@ -36,12 +35,6 @@ func GeneratePassword(length int, useUpper, useLower, useSpecial, useNumbers, co
 	for i := 0; i < length; i++ {
 		randomIndex, _ := rand.Int(rand.Reader, big.NewInt(int64(len(chars))))
 		password.WriteByte(chars[randomIndex.Int64()])
-	}
-	if copy {
-		err := CopyToClipboard(password.String())
-		if err != nil {
-			fmt.Println("failed to copy to clipboard", err)
-		}
 	}
 	return password.String()
 }

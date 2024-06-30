@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"strings"
 
 	"github.com/munene-m/firstpass/internal/utils"
 )
@@ -18,9 +20,25 @@ func main(){
 
 	flag.Parse()
 
+	var passwords []string
+
 	for i := 0; i < *count; i++ {
-		password := utils.GeneratePassword(*length, *useUpper, *useLower, *useSpecial, *useNumbers, *copy)
-		fmt.Printf("Generated password: %s\n", password)
+		password := utils.GeneratePassword(*length, *useUpper, *useLower, *useSpecial, *useNumbers)
+		passwords = append(passwords, password)
 	}
+
+	if *copy {
+		clipboardContent := strings.Join(passwords, "\n")
+		err := utils.CopyToClipboard(clipboardContent)
+		if err != nil {
+			log.Fatalf("Failed to copy to clipboard: %v", err)
+		}
+		fmt.Println("Password(s) copied to clipboard.")
+	} else {
+		for _, password := range passwords {
+			fmt.Printf("Generated password: %s\n ", password)
+		}
+	}
+	
 }
 
