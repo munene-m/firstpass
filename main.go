@@ -9,10 +9,10 @@ import (
 
 func main(){
 	length := flag.Int("l", 15, "Length of the password")
-	useUpper := flag.Bool("upper", false, "Use uppercase characters")
-	useLower := flag.Bool("lower", false, "Include lowercase characters")
-	useNumbers := flag.Bool("numbers", false, "Include numbers")
-	useSpecial := flag.Bool("special", false, "Include special characters")
+	useUpper := flag.Bool("U", false, "Use uppercase characters")
+	useLower := flag.Bool("L", false, "Include lowercase characters")
+	useNumbers := flag.Bool("n", false, "Include numbers")
+	useSpecial := flag.Bool("s", false, "Include special characters")
 	count := flag.Int("c", 1, "number of passwords to generate")
 	copy := flag.Bool("cp", false, "Copy to clipboard")
 
