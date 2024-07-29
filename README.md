@@ -7,7 +7,7 @@ password generator CLI
 ```sh
 git clone https://github.com/munene-m/firstpass.git`
 cd firstpass
-go build .
+make build
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ go build .
 Run the CLI using:
 
 ```
-go run main.go [flags]
+make start-app ARGS="[flags]"
 ```
 
 ### Flags
@@ -31,10 +31,10 @@ go run main.go [flags]
 ### Example
 
 ```
-go run main.go -l 16 -U -L -n -s -c 3
+make start-app ARGS="-l 14 -U -L -n -s -c 2"
 ```
 
-This command generates 3 passwords, each 16 characters long, including uppercase, lowercase, numbers, and special characters.
+This command generates 2 passwords, each 14 characters long, including uppercase, lowercase, numbers, and special characters.
 
 ### Features
 
