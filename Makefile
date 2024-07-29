@@ -8,9 +8,6 @@ MAIN_FILE := main.go
 build:
 	@go build -o $(BUILD_DIR)/$(BINARY_NAME) $(MAIN_FILE)
 
-start-app: build
-	@$(BUILD_DIR)/$(BINARY_NAME) $(ARGS)
-
 run: build
 	@$(BUILD_DIR)/$(BINARY_NAME) $(ARGS)
 
