@@ -15,7 +15,7 @@ make build
 Run the CLI using:
 
 ```
-make start-app ARGS="[flags]"
+make run ARGS="[flags]"
 ```
 
 ### Flags
@@ -31,7 +31,7 @@ make start-app ARGS="[flags]"
 ### Example
 
 ```
-make start-app ARGS="-l 14 -U -L -n -s -c 2"
+make run ARGS="-l 14 -U -L -n -s -c 2"
 ```
 
 This command generates 2 passwords, each 14 characters long, including uppercase, lowercase, numbers, and special characters.
